@@ -6,6 +6,7 @@ const usuarioRouter = require("./routes/usuarios");
 const productRouter = require("./routes/products");
 const authRouter = require("./routes/auth");
 const bodyParser = require("body-parser");
+const PORT = process.env.PORT || 4000;
 
 const app = express();
 app.use(express.json({limit:'1mb'}))
@@ -19,8 +20,8 @@ app.use("/api/products", productRouter);
 app.use("/api/auth", authRouter)
 
 
-app.listen(3000, ()=>{
-    console.log("listening port 3000");
+app.listen(PORT, ()=>{
+    console.log("listening to port"+ process.env.PORT);
 })
 
 
